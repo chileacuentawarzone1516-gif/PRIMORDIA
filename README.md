@@ -5,6 +5,10 @@ Maqueta digital 3D de **The Island** (ARK: Survival Evolved / Ascended) generada
 
 ![Vista aérea de la maqueta](docs/preview_aerial.jpg)
 
+| Vista cenital | Volcán y cumbres del norte | Obelisco verde |
+| --- | --- | --- |
+| ![Mapa cenital](docs/preview_map.jpg) | ![Detalle del norte](docs/detail_north.jpg) | ![Detalle del obelisco](docs/detail_obelisk.jpg) |
+
 ## Contenido
 
 | Ruta | Qué es |
