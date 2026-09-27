@@ -1,0 +1,5 @@
+# Solo para tools/extract_geography.py (el script de Blender no necesita nada de esto).
+numpy>=1.24
+pillow>=10.0
+scipy>=1.10
+scikit-image>=0.22

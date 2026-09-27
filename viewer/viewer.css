@@ -1,0 +1,107 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e1014;
+  --surface: rgba(22, 24, 29, 0.78);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #eceef2;
+  --muted: #a4a9b4;
+  --accent: #d9b878;
+  --focus: #8fb8ff;
+  --radius: 12px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+.stage {
+  position: fixed;
+  inset: 0;
+  touch-action: none;
+}
+
+.stage canvas { display: block; width: 100%; height: 100%; }
+
+.brand {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brand span { color: var(--accent); }
+
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  max-width: calc(100vw - 32px);
+}
+
+.toolbar button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.toolbar button:hover { background: rgba(255, 255, 255, 0.08); }
+.toolbar button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.toolbar button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.status {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  text-align: center;
+  background: var(--bg);
+  transition: opacity 0.4s ease;
+}
+
+.status[hidden] { display: none; }
+.status.is-done { opacity: 0; pointer-events: none; }
+.status p { margin: 0; color: var(--muted); font-size: 14px; }
+.status progress { width: min(280px, 70vw); accent-color: var(--accent); }
+.status .error { max-width: 420px; color: #ffb4a8; }
+
+@media (max-width: 480px) {
+  .toolbar button { padding: 0 10px; font-size: 13px; }
+  .brand { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status, .toolbar button { transition: none; }
+}

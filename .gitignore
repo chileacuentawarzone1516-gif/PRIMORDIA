@@ -1,0 +1,22 @@
+# Blender
+*.blend1
+*.blend@
+/renders/
+
+# Salidas de exportación fuera del visor (el .glb publicado vive en viewer/)
+/*.glb
+/exports/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / Netlify
+node_modules/
+.netlify/
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net 'sha256-PJuPofc3VlYWTUNXN9BXKt1IhI2wg5qUvxVGhJE5x5k=' 'wasm-unsafe-eval'; connect-src 'self' blob: https://cdn.jsdelivr.net; img-src 'self' blob: data:; style-src 'self'; worker-src blob:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="PRIMORDIA · maqueta 3D interactiva de The Island (ARK) generada con Blender.">
+  <title>PRIMORDIA · The Island 3D</title>
+  <link rel="stylesheet" href="./viewer.css">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+  <script type="module" src="./viewer.js"></script>
+</head>
+<body>
+  <main>
+    <div id="stage" class="stage" role="img" aria-label="Maqueta 3D interactiva de The Island. Arrastra para orbitar, rueda o pellizco para acercar."></div>
+    <h1 class="brand">Primordia <span>·</span> The Island</h1>
+    <nav class="toolbar" aria-label="Controles de vista">
+      <button type="button" data-action="aerial" aria-label="Vista aérea">Aérea</button>
+      <button type="button" data-action="map" aria-label="Vista de mapa">Mapa</button>
+      <button type="button" data-action="rotate" aria-label="Rotar automáticamente" aria-pressed="false">Rotar</button>
+    </nav>
+    <div id="status" class="status" role="status" aria-live="polite">
+      <progress id="progress" max="1" value="0" aria-label="Cargando maqueta"></progress>
+      <p id="status-message">Cargando maqueta…</p>
+    </div>
+  </main>
+</body>
+</html>
